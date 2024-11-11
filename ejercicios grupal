@@ -1,0 +1,127 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyM8oy9vvYeDYH9wldkcZJGi",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/ETorresSacha/clases-MI/blob/main/ejercicios%20grupal\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "CbORmhcB4h0G"
+      },
+      "outputs": [],
+      "source": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "\n",
+        "Actividad 01\n",
+        "Crear una lista con números que comiencen por 30 y que termine en 42 haciendo que el paso entre cada número consecutivo sea de 0.4. Sin usar Numpy."
+      ],
+      "metadata": {
+        "id": "PeFJpoUF5O9I"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x =30\n",
+        "y=[]\n",
+        "while x < 42:\n",
+        "  y.append(round(x,1))\n",
+        "  x+=0.4\n",
+        "print(y)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MufdtSLO5QQ3",
+        "outputId": "0390101f-0db7-4fd6-eca6-19436b1b2722"
+      },
+      "execution_count": 32,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[30, 30.4, 30.8, 31.2, 31.6, 32.0, 32.4, 32.8, 33.2, 33.6, 34.0, 34.4, 34.8, 35.2, 35.6, 36.0, 36.4, 36.8, 37.2, 37.6, 38.0, 38.4, 38.8, 39.2, 39.6, 40.0, 40.4, 40.8, 41.2, 41.6, 42.0]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Actividad 02 /n/\n",
+        "Dataset -> https://raw.githubusercontent.com/grammakov/USA-cities-and-states/master/us_cities_states_counties.csv\n",
+        "Header -> City|State short|State full|County|City alias\n",
+        "Obtener el número de ciudades que tiene el estado de Florida, usando dicho Dataset\n",
+        "Sin usar Pandas"
+      ],
+      "metadata": {
+        "id": "o7mq9MjdAqFH"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import urllib\n",
+        "\n",
+        "url = \"https://raw.githubusercontent.com/grammakov/USA-cities-and-states/master/us_cities_states_counties.csv\"\n",
+        "\n",
+        "# Devuelve un fichero desde una url como cadena de caracteres\n",
+        "def read_url(url):\n",
+        "    return urllib.request.urlopen(url).read().decode('utf-8')\n",
+        "\n",
+        "# Descargar un fichero desde una url a una ruta local\n",
+        "def download_file(url, dest):\n",
+        "    urllib.request.urlretrieve(url, dest)\n",
+        "    return\n",
+        "\n",
+        "print(download_file(url,\"MA\"))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "e6L9J_ABAui3",
+        "outputId": "2cba9607-cac5-473f-e0ee-b9e0f03e2ad0"
+      },
+      "execution_count": 33,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "None\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
